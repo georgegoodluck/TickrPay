@@ -1,4 +1,7 @@
-# 🎟️ TickrPay
+<img width="1024" height="1024" alt="TickrPay" src="https://github.com/user-attachments/assets/e3abc93e-86af-4e8a-a85d-35b339cbf3ce" />
+
+
+# TickrPay
 
 > Real-time event payment registration and instant attendee ID generation.
 
