@@ -8,7 +8,7 @@ import { supabase } from "./supabase";
  */
 export const generateID = (name: string): string => {
   const prefix = name.trim().slice(0, 3).toUpperCase().padEnd(3, "X");
-  const suffix = Math.floor(1000 + Math.random() * 9000);
+  const suffix = Math.floor(1+ Math.random() * 9000);
   return `${prefix}-${suffix}`;
 };
 
