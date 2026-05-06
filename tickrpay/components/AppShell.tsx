@@ -1,9 +1,9 @@
-import React from 'react'
+import Sidebar from "./Sidebar";
 
-const AppShell = () => {
+export default function AppShell() {
   return (
-    <div>AppShell</div>
+    <div>
+      <Sidebar />
+    </div>
   )
 }
-
-export default AppShell
