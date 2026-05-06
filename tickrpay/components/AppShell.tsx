@@ -5,5 +5,5 @@ export default function AppShell() {
     <div>
       <Sidebar />
     </div>
-  )
+  );
 }
