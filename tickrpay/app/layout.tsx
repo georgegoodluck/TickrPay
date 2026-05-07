@@ -1,42 +1,17 @@
-/* eslint-disable @next/next/no-page-custom-font */
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-// @ts-expect-error - No types available for this package
-import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "TickrPay",
-  description:
-    "A Modern event check-in system built to help organizers confirm payments and instantly issue unique attendee IDs during live events.",
-  icons: {
-    icon: "/logo.jpg", // Path to your logo in the public directory
-  },
+  title: 'TickrPay',
+  description: 'Event payment registration & ID issuing',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
           rel="stylesheet"
@@ -49,11 +24,7 @@ export default function RootLayout({
           input[type='number']::-webkit-outer-spin-button { -webkit-appearance: none; }
         `}</style>
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
