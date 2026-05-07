@@ -8,7 +8,7 @@ import { supabase } from "./supabase";
  */
 export const generateID = (name: string): string => {
   const prefix = name.trim().slice(0, 3).toUpperCase().padEnd(3, "X");
-  const suffix = Math.floor(1+ Math.random() * 9000);
+  const suffix = Math.floor(1 + Math.random() * 9000);
   return `${prefix}-${suffix}`;
 };
 
@@ -18,7 +18,7 @@ export const generateID = (name: string): string => {
  */
 export const ensureUniqueID = async (name: string): Promise<string> => {
   let unique_id = generateID(name);
-
+// Supabase query to check for existing unique_id in the attendees table
   let { data: clash } = await supabase
     .from("attendees")
     .select("id")
