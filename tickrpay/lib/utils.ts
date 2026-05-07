@@ -23,7 +23,7 @@ export const ensureUniqueID = async (name: string): Promise<string> => {
     .from("attendees")
     .select("id")
     .eq("unique_id", unique_id)
-    .single();
+    .maybeSingle();
 
   while (clash) {
     unique_id = generateID(name);
@@ -31,7 +31,7 @@ export const ensureUniqueID = async (name: string): Promise<string> => {
       .from("attendees")
       .select("id")
       .eq("unique_id", unique_id)
-      .single());
+      .maybeSingle());
   }
 
   return unique_id;

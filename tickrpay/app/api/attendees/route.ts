@@ -5,7 +5,7 @@ import { ensureUniqueID } from "@/lib/utils";
 // GET - Fetch all attendees, newest first
 
 export async function GET() {
-  // pulling two properties from the attendees table - data and error
+  // Pulling two properties from the attendees table - data and error
   const { data, error } = await supabase
     // get it from attendees table
     .from("attendees")
@@ -26,6 +26,7 @@ export async function POST(req: NextRequest) {
   // Extract the name and amount from the request which is expected to be in JSON format. The req.json() method is used to parse the JSON body of the request and extract the name and amount properties.
 
   // Validation process
+  //   Passing two properties from the attendees table - name and amount
   const { name, amount } = await req.json();
   // if there's no name(after cleaning up spaces) or amount, return a JSON respose with error message and a 404 status code.
   if (!name?.trim() || !amount) {
@@ -51,8 +52,8 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Generate a guaranteed unique ID
-  const unique_id = ensureUniqueID(name);
+  // Generate a guaranteed unique ID. I am calling the function that generates a unique ID.
+  const unique_id = await ensureUniqueID(name);
 
   const { data, error } = await supabase
     .from("attendees")
