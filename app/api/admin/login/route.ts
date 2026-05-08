@@ -10,4 +10,5 @@ export async function POST(req: NextRequest) {
   if (pin !== process.env.ADMIN_PIN) {
     return NextResponse.json({ error: "Incorrect Pin" }, { status: 401 });
   }
+  const res = NextResponse.json({ success: true });
 }
