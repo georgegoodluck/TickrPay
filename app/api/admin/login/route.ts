@@ -18,4 +18,5 @@ export async function POST(req: NextRequest) {
     sameSite: "lax", // cookie sent when navigating to the site for CSRF
     maxAge: 60 * 60 * 8, // cookie expires after 8 hours
   });
+  return res;
 }
