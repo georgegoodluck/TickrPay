@@ -1,96 +1,91 @@
-<img width="1024" height="1024" alt="TickrPay" src="https://github.com/user-attachments/assets/e3abc93e-86af-4e8a-a85d-35b339cbf3ce" />
+# TickrPay Application
 
-
-# TickrPay
-
-> Real-time event payment registration and instant attendee ID generation.
-
-TickrPay is a modern event check-in system built to help organizers confirm payments and instantly issue unique attendee IDs during live events.
-
-This repository separates high-level documentation from the core application code for clarity and scalability.
+This directory contains the core Next.js application for TickrPay.
 
 ---
 
-## 📂 Repository Structure
+## 🏗️ Architecture Overview
+
+TickrPay is structured with scalability and maintainability in mind.
+
+* Component-driven UI architecture
+* Separation of business logic and presentation
+* Environment-based configuration
+* Supabase-powered backend services
+
+---
+
+## 📂 Folder Structure (Planned)
 
 ```bash
-TickrPay/
+tickrpay/
 │
-├── README.md            # Project overview (this file)
-├── LICENSE              # Legal terms
-└── tickrpay/            # Main application source code
-    └── README.md        # Application-specific documentation
+├── app/                # Next.js App Router
+├── components/         # Reusable UI components
+├── lib/                # Utilities & business logic
+├── supabase/           # Supabase client configuration
+├── types/              # TypeScript definitions
+├── public/             # Static assets
+└── styles/             # Global styles
 ```
 
-### Why This Structure?
+---
 
-This layout allows:
+## ⚙️ Environment Setup
 
-* Clean documentation at the root level
-* Scalable architecture (future mobile app, admin panel, API service)
-* Clear separation between meta files and source code
-* Easier expansion into a monorepo if needed
+Create a `.env.local` file in this directory:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+```
 
 ---
 
-## 🚀 Project Vision
-
-TickrPay aims to eliminate manual event payment tracking by providing:
-
-* Instant payment logging
-* Automatic structured unique ID generation
-* Live attendee dashboard
-* Searchable check-in system
-
-Designed for reliability under real event pressure.
-
----
-
-## 🛠️ Planned Stack
-
-* Next.js
-* React + TypeScript
-* Tailwind CSS
-* shadcn/ui
-* Supabase (PostgreSQL + Auth)
-* Vercel deployment
-
----
-
-## 📦 Getting Started
-
-When development begins:
+## 🧪 Local Development
 
 ```bash
-git clone https://github.com/georgegoodluck/TickrPay.git
-cd TickrPay/tickrpay
 npm install
 npm run dev
 ```
 
----
+App runs on:
 
-## 📈 Roadmap
-
-* Payment registration system
-* Unique ID generation engine
-* Authentication & role control
-* Real-time dashboard
-* QR code support
-* Export functionality
-* Multi-event support
+```
+http://localhost:3000
+```
 
 ---
 
-## 📜 License
+## 🔐 Authentication
 
-MIT License. See `LICENSE` for details.
+Authentication will be handled using Supabase Auth with role-based access planned for future updates.
 
 ---
 
-## 👤 Author
+## 🧠 Core Logic (Planned)
 
-**George Goodluck**
-Software Engineer
+* Unique attendee ID generation algorithm
+* Payment record validation
+* Real-time dashboard updates
+* Duplicate registration prevention
+* Event-level data isolation
+
+---
+
+## 🛠️ Engineering Goals
+
+* Clean, scalable folder architecture
+* Strong TypeScript typing
+* Performance-conscious rendering
+* Real-time database sync
+* Expandable multi-event design
+
+---
+
+## 🚧 Status
+
+Project initialization phase.
+Core features under development.
 
 ---
